@@ -1,6 +1,6 @@
-//Week 5, Session 1
+// Week 5, Session 1
 
-/* 
+/*
  * Task 1.2
  *
  * Write a C program that reads a year from the user and determines whether it is a leap year.
@@ -12,31 +12,34 @@
  *
  * Input
  * - An integer representing a year (e.g., 2024)
- * 
+ *
  * Output
  * - Print "Leap Year" if the year is a leap year
  * - Otherwise, print "Not a Leap Year"
  *
  */
- 
+
 #include <stdio.h>
- 
-int main(void) {
-	
-    int year;
+
+int main(void)
+{
+
+	int year;
 	char buffer[100];
-	
+
 	printf("Enter a year: ");
-    fgets(buffer, 100, stdin);
+	fgets(buffer, 100, stdin);
 	sscanf(buffer, "%d", &year);
-	
+
 	// Complete your code here
-	if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){  // todo
+	if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+	{ // todo
 		printf("Leap Year\n");
-	} else{
+	}
+	else
+	{
 		printf("Not a Leap Year\n");
 	}
-	
-    return 0;
-	 
+
+	return 0;
 }

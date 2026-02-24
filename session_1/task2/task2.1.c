@@ -31,6 +31,9 @@ int main(int argc, char *argv[]) {
     char operation;
     float result;
     
+
+    fgets (buffer,256,stdin);
+    n = atof (buffer);
     // Check if the correct number of arguments is provided
     if (argc != 4) {
         printf("Usage: %s number1 operation number2\n", argv[0]);

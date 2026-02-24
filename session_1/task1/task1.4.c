@@ -3,7 +3,7 @@
 /*
  * Task 1.4
  * Write a C program that perform the same function as the following Python program.
-   
+
    Python program:
    order_amount = float(input("Enter order amount: "))
    is_premium = int(input("Is customer a premium member? (1 = Yes, 0 = No): "))
@@ -16,27 +16,30 @@
  */
 #include <stdio.h>
 
-int main(void) {
-	float order_amount;
-	int is_premium;
-	int is_blacklisted;
-	
-	printf("Enter order amount: ");
+int main(void)
+{
+    float order_amount;
+    int is_premium;
+    int is_blacklisted;
+
+    printf("Enter order amount: ");
     scanf("%f", &order_amount);
-	
-	printf("Is customer a premium member? (1 = Yes, 0 = No): ");
+
+    printf("Is customer a premium member? (1 = Yes, 0 = No): ");
     scanf("%d", &is_premium);
-	
-	printf("Is customer blacklisted? (1 = Yes, 0 = No): ");
+
+    printf("Is customer blacklisted? (1 = Yes, 0 = No): ");
     scanf("%d", &is_blacklisted);
-	
-	if (((order_amount > 100) || (is_premium == 1)) && (!is_blacklisted)){
+
+    if (((order_amount > 100) || (is_premium == 1)) && (!is_blacklisted))
+    {
         printf("Discount Applied\n");
     }
 
-    else{
+    else
+    {
         printf("No Discount\n");
     }
 
-	return 0;
+    return 0;
 }
