@@ -27,31 +27,27 @@ int main(void)
 	// Power is used in the calculation to work out the decimal eqivalent of the position of the hex character
 	int power = length - 1;
 
-	for (int j = 0; j < length; j++)
-	{
-		// Checks if the ASCII of the hex values are in the valid range
-		if (!(48 <= hex[j] && hex[j] <= 57) && !(65 <= hex[j] && hex[j] <= 70) && !(97 <= hex[j] && hex[j] <= 102))
-		{
-			printf("Error: Invalid Hexadecimal\n");
-			return 0;
-		}
-	}
-
 	for (int k = 0; k < length; k++)
 	{
-		if (48 <= hex[k] && hex[k] <= 57) // Checks if the hex is 0-9
+		if (!('0' <= hex[k] && hex[k] <= '9') && !('A' <= hex[k] && hex[k] <= 'F') && !('a' <= hex[k] && hex[k] <= 'f'))
 		{
-			decimal += pow(16, power) * (hex[k] - 48);
+			printf("Error: Invalid Hexadecimal\n");
 		}
 
-		if (65 <= hex[k] && hex[k] <= 70) // Checks if the hex is A-F
+		if ('0' <= hex[k] && hex[k] <= '9') // Checks if the hex is 0-9
+		{
+			decimal += pow(16, power) * (hex[k] - 48); // subtracts 48 so that 0 scales to 0 and 1-9 scale accordingly
+
+		}
+
+		if ('A' <= hex[k] && hex[k] <= 'F') // Checks if the hex is A-F
 		{
 			decimal += pow(16, power) * (hex[k] - 55); // Subtracts 55 so that A scales to 10 and B C .. etc. scale accordingly
 		}
 
-		if (97 <= hex[k] && hex[k] <= 102)
+		if ('a' <= hex[k] && hex[k] <= 'f') 
 		{
-			decimal += pow(16, power) * (hex[k] - 87);
+			decimal += pow(16, power) * (hex[k] - 87); //subtracts 87 so that a scales to 10 and b c ... etc accordingly
 		}
 		power -= 1;
 	}
