@@ -18,21 +18,28 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 
 int main(void) {
-	
     float account_balance;
 	float purchase_amount;
+	char buffer[100];
+	
 	
 	printf("Enter account balance: ");
-    scanf("%f", &account_balance);
+    fgets(buffer, 100, stdin);
+	sscanf(buffer, "%f", &account_balance);
 	
 	printf("Enter purchase amount: ");
-    scanf("%f", &purchase_amount);
+    fgets(buffer, 100, stdin);
+	sscanf(buffer, "%f", &purchase_amount);
+
+	account_balance = floorf(account_balance * 100) / 100;
+	purchase_amount = floorf(purchase_amount * 100) / 100;
 	
 	// Complete your code here
-	if (){  // todo
-		// todo
+	if (account_balance >= purchase_amount){  // todo
+		account_balance = account_balance - purchase_amount;
 		printf("Transaction Approved. Remaining balance %.2f\n", account_balance);
 	}
 	else{
