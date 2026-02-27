@@ -9,6 +9,11 @@ int main(void){
  * until a 0 (zero) is entered. Print the sum at the end.
  */
 
+ int Numbers[100];
+
+ 
+
+
 
     return 0;
 }
